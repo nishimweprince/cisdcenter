@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SETTING ROOT STYLES */
+
+html {
+  --green: #0B9444;
+  --blue: #1350A0;
+
+  --blue-hover: #14417c;
+  --green-hover: #137b3f;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SETTING UNIVERSAL STYLES */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    transform: scale(1.02);
+}
+
+li {
+    list-style: none;
+
+    padding: 0 1.875rem;
+}
+
+/* <---- NAVBAR CONTAINER ----> */
+
+.navbar-container {
+    height: auto;
+    /* border: 2px solid purple; */
+}
+
+/* <--- NAVIGATON BAR ---> */
+
+nav {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px 0;
+    /* border: 2px solid red; */
+}
+
+ /* NAVIGATON BAR ELEMENTS */
+
+.navbar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+}
+
+/* NAVIGATON BAR LOGO */
+
+.logo {
+    display: flex;
+}
+
+.logo .logo-images {
+    display: flex;
+    gap: 10px;
+}
+
+.logo-images img {
+    max-height: 80px;
+}
+
+/* NAVIGATION BAR LINKS */
+
+.navbar-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    /* border: 2px solid red; */
+}
+
+/* NAVIGATION BUTTONS */
+
+.nav-link {
+    font-size: 1.125rem;
+}
+
+.nav-link:hover {
+    color: var(--green-hover);
+}
+
+/* DONATE BUTTON */
+
+.link-donate {
+    padding: 10px 1.25rem;
+    background-color: var(--green);
+    color: white;
+    border-radius: 5px;
+}
+
+.link-donate:hover {
+    background-color: var(--green-hover);
+    color: white;
+}
+
+/* NAVIGATON CTA */
+
+.navbar-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.875rem;
+}
+
+.link-join {
+    padding: 0.75rem 1.25rem;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 5px;
+}
+
+.link-join:hover {
+    background-color: var(--blue-hover);
+    color: white;
+}
+
+
+/* <---- RESPONSIVENESS ----> */
+
+/* HAMBURGER MENU */
+
+.burger-menu {
+    height: 100px;
+    width: 3.5em;
+    height: 40px;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    display: none;
+}
+
+.burger-bar {
+    width: 3.5em;
+    height: 0.3em;
+    background-color: var(--green-hover);
+    border-radius: 0.5em;
+}
+
+/* RESPONSIVE MENU */
+
+.responsive-navigation {
+    width: 50%;
+    height: fit-content;
+    background-color: rgb(206, 211, 228);
+    position: absolute;
+    z-index: -1;
+    right: 5%;
+    padding: 40px 0;
+    border-radius: 5px;
+    margin: 5px auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-links-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+
+    height: 50%;
+}
+
+.navbar-links-responsive .nav-link {
+    display: inline-block;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+.navbar-cta-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid red; */
+    padding: 20px 0;
+
+}
+
+/* SLIDING MENU */
+
+.hidden {
+    display: none;
+    transform: translateY(-150%);
+    transition: 0.8s all ease-in-out;
+}
+
+.visible {
+    display: inherit;
+    transform: translateY(0);
+    transition: .8s all ease-in-out;
+}
+
+/* <---- ANIMATIONS ---->*/
+
+/* CLICKED */
+
+.burger-bar.clicked:nth-child(1) {
+    transform: rotate(45deg) translate(0.75em, 1.125em);
+    transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(2) {
+    transform: scale(0.01);
+    transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(3) {
+    transform: rotate(135deg) translate(-0.25em, 1em);
+    transition: ease-out 0.5s;
+}
+
+/* UNCKLICKED */
+
+.burger-bar.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+
+/* <---- MEDIA QUERIES ----> */
+
+/* <!-- 1000 PX and above --> */
+
+@media screen and (min-width: 1000px) {
+
+    /* NAVIGATION BAR */
+    .navbar-links {
+        width: 45%;
+    }
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        display: none;
+    }
+}
+
+/* <-- 1000 PX --> */
+
+@media screen and (max-width: 1000px) {
+
+    /* NAVIGATION BAR */
+
+    .logo-images img {
+        max-height: 70px;
+    }
+
+    .navbar-links {
+        width: 45%;
+    }
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        display: none;
+    }
+}
+
+/* <-- 900 PX --> */
+
+@media screen and (max-width: 900px) {
+
+    /* NAVIGATION BAR */
+
+    .navbar-links {
+        width: 50%;
+    }
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        display: none;
+    }
+    
+}
+
+/* <-- 850 PX --> */
+
+@media screen and (max-width: 850px) {
+
+    /* NAVIGATION BAR */
+
+    .navbar-links, .navbar-cta {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        transition: 0.8s all ease-in-out;
+    }
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        display: flex;
+    }
+}
+
+/* <-- 600 PX --> */
+
+@media screen and (max-width: 600px) {
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        width: 70%;
+    }
+
+    /* HAMBURGER */
+
+    .burger-bar {
+        width: 3em;
+    }
+
+}
+
+/* <-- 400 PX --> */
+
+@media screen and (max-width: 400px) {
+
+    /* NAVBAR */
+
+    .logo {
+        padding: 0 1.25rem;
+    }
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        width: 90%;
+        align-items: center;
+    }
+
+}
+
+/* <-- 350 PX --> */
+
+@media screen and (max-width: 350px) {
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        width: 90%;
+        display: flex;
+    }
+}
+
+/* <-- 300 PX and below --> */
+
+@media screen and (max-width: 300px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* NAVIGATION BAR  */
+
+    .navbar-navigation {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* RESPONSIVE NAVIGATION */
+
+    .responsive-navigation {
+        width: 100%;
+    }
+}

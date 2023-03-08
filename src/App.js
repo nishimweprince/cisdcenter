@@ -1,17 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Routes
+} from "react-router-dom";
+import Navbar from './components/navbar/Navbar';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      
-      <header className="App-header">
+    <>
 
-      <h1>Welcome to the very first home page of CISD's new website</h1>
+    <Navbar />
 
-        </header>
-
-    </div>
+    </>
   );
 }
 
